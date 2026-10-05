@@ -4,7 +4,13 @@ import base64
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(# ---------- Warehouse background + PARNAM signature ----------
+st.set_page_config(
+    page_title="WMS ↔ SAP Reconciliation",
+    page_icon="📦",
+    layout="wide"
+)
+
+# -------- Warehouse Background --------
 try:
     with open("warehouse.png", "rb") as f:
         warehouse_img = base64.b64encode(f.read()).decode()
@@ -17,19 +23,18 @@ try:
             right: 0;
             top: 0;
             width: 50%;
-            height: 100vh;
+            height: 100%;
             background-image: url("data:image/png;base64,{warehouse_img}");
             background-size: cover;
             background-position: center;
             opacity: 0.18;
             z-index: -1;
-            pointer-events: none;
         }}
 
         .parnam-signature {{
             position: fixed;
             right: 25px;
-            bottom: 18px;
+            bottom: 20px;
             font-family: cursive;
             font-size: 22px;
             font-style: italic;
