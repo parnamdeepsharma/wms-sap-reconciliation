@@ -58,8 +58,8 @@ st.caption("Download the required templates, fill them with your data, upload th
 # -----------------------------
 # Standard templates
 # -----------------------------
-WMS_COLUMNS = ["Material", "Batch", "Qty", "Plant"]
-SAP_COLUMNS = ["Material", "Batch", "Qty", "Plant"]
+WMS_COLUMNS = ["Material", "Batch", "WMS Qty", "Plant"]
+SAP_COLUMNS = ["Material", "Batch", "SAP Qty", "Plant"]
 def create_template(columns, sheet_name):
     df = pd.DataFrame(columns=columns)
     out = io.BytesIO()
