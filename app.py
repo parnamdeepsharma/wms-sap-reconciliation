@@ -19,7 +19,7 @@ st.set_page_config(
 # ============================================================
 
 try:
-    with open("warehouse.png", "rb") as f:
+    with open("warehouse.png.webp", "rb") as f:
         warehouse_img = base64.b64encode(f.read()).decode()
 
     st.markdown(
