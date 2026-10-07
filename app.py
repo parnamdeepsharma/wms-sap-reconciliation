@@ -131,8 +131,6 @@ def reconcile(wms, sap):
             "SAP line count",
             "WMS total quantity",
             "SAP total quantity",
-            "Unique WMS material/location records",
-            "Unique SAP material/location records",
             "Correct / MATCH records",
             "Quantity mismatch records",
             "WMS-only records",
@@ -184,7 +182,7 @@ c1, c2 = st.columns(2)
 
 with c1:
     st.subheader("📦 WMS Template")
-    st.write("Required columns: Material, Plant, Storage Location, Batch, WMS Quantity")
+    st.write("Required columns: Material, Plant, Batch, WMS Quantity")
     st.download_button(
         "⬇️ Download WMS Excel Format",
         data=create_template(WMS_COLUMNS, "WMS Data"),
@@ -194,7 +192,7 @@ with c1:
 
 with c2:
     st.subheader("🏢 SAP Template")
-    st.write("Required columns: Material, Plant, Storage Location, Batch, SAP Quantity")
+    st.write("Required columns: Material, Plant, Batch, SAP Quantity")
     st.download_button(
         "⬇️ Download SAP Excel Format",
         data=create_template(SAP_COLUMNS, "SAP Data"),
