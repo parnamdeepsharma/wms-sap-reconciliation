@@ -891,4 +891,6 @@ if wms_file and sap_file:
 else:
 
     st.info(
-        "Upload both completed templates
+        "Upload both completed templates to continue."
+    )
+        
