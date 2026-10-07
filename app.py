@@ -90,13 +90,13 @@ def reconcile(wms, sap):
 
     # Standardized matching key
     for df in (w, s):
-        for col in ["Material", "Plant", "Storage Location", "Batch"]:
+        for col in ["Material", "Plant", "Batch"]:
             df[col] = clean_text(df[col])
 
     w["WMS Quantity"] = pd.to_numeric(w["WMS Quantity"], errors="coerce").fillna(0)
     s["SAP Quantity"] = pd.to_numeric(s["SAP Quantity"], errors="coerce").fillna(0)
 
-    key_cols = ["Material", "Plant", "Storage Location", "Batch"]
+    key_cols = ["Material", "Plant", "Batch"]
 
     w_agg = w.groupby(key_cols, dropna=False)["WMS Quantity"].sum().reset_index()
     s_agg = s.groupby(key_cols, dropna=False)["SAP Quantity"].sum().reset_index()
